@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management | FindBack</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>FindBack</h2>
+            <p>Lost and Found Management System</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="AdminDashboard.html">Dashboard</a>
+            <a href="AdminManagement.html" class="active">Management</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" onclick="logoutUser(); return false;">Logout</a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+            <div>
+                <h3>Management</h3>
+                <p>Manage reports, claims and item returns.</p>
+            </div>
+
+            <div class="topbar-profile">
+                <span class="profile-avatar">A</span>
+                <span>Organization Admin</span>
+            </div>
+        </header>
+
+        <section class="management-content">
+
+            <div class="management-heading">
+                <h1>Management Center</h1>
+                <p>Review and manage your organization's Lost & Found activities.</p>
+            </div>
+
+            <!-- Management Tabs -->
+            <div class="management-tabs">
+                <button class="management-tab active" data-section="items">
+                    Manage Items
+                </button>
+
+                <button class="management-tab" data-section="claims">
+                    Manage Claims
+                </button>
+
+                <button class="management-tab" data-section="returns">
+                    Manage Returns
+                </button>
+
+                <button class="management-tab" data-section="analytics">
+                    Analytics
+                </button>
+            </div>
+
+            <!-- ITEMS SECTION -->
+            <div class="management-section active" id="itemsSection">
+
+                <div class="management-section-heading">
+                    <div>
+                        <h2>Item Reports</h2>
+                        <p>Review reported lost and found items.</p>
+                    </div>
+                </div>
+
+                <div class="management-table-wrapper">
+                    <table class="management-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Type</th>
+                                <th>Reported By</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="adminItemsTable">
+                        <tr>
+                        <td colspan="6" style="text-align:center;">
+                        Loading item reports...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                
+            </div>
+
+            <!-- CLAIMS SECTION -->
+            <div class="management-section" id="claimsSection">
+
+                <div class="management-section-heading">
+                    <div>
+                        <h2>Claim Requests</h2>
+                        <p>Review claims submitted by organization members.</p>
+                    </div>
+                </div>
+
+                <div class="management-table-wrapper">
+                    <table class="management-table">
+                        <thead>
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Item</th>
+                                <th>Member</th>
+                                <th>Claim Details</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="claimsTableBody">
+                        <tr>
+                        <td colspan="6">Loading claims...</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+            <!-- RETURNS SECTION -->
+            <div class="management-section" id="returnsSection">
+
+                <div class="management-section-heading">
+                    <div>
+                        <h2>Item Returns</h2>
+                        <p>Record the physical handover of approved items.</p>
+                    </div>
+                </div>
+
+                <div class="management-info-card">
+                    <h3>Physical Handover Verification</h3>
+                    <p>
+                        When a member collects an approved item, the admin verifies
+                        the handover and records the return. Only then is the item
+                        marked as returned.
+                    </p>
+                </div>
+
+                <div class="management-table-wrapper">
+                    <table class="management-table">
+                        <thead>
+                            <tr>
+                                <th>Return ID</th>
+                                <th>Claim ID</th>
+                                <th>Item ID</th>
+                                <th>Member ID</th>
+                                <th>Verified By</th>
+                                <th>Return Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="returnsTableBody">
+                        <tr>
+                        <td colspan="6">Open this tab to load completed returns.</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+
+                
+            </div>
+
+            
+<!-- ANALYTICS SECTION -->
+<div class="management-section" id="analyticsSection">
+
+    <div class="management-section-heading">
+        <div>
+            <h2>Organization Analytics</h2>
+            <p>A quick overview of Lost & Found activity.</p>
+        </div>
+    </div>
+
+    <div class="management-analytics-grid">
+
+        <div class="management-analytics-card">
+            <span>Total Reports</span>
+            <h2 id="analyticsTotalReports">0</h2>
+        </div>
+
+        <div class="management-analytics-card">
+            <span>Found Items</span>
+            <h2 id="analyticsFoundItems">0</h2>
+        </div>
+
+        <div class="management-analytics-card">
+            <span>Claims Submitted</span>
+            <h2 id="analyticsTotalClaims">0</h2>
+        </div>
+
+        <div class="management-analytics-card">
+            <span>Items Returned</span>
+            <h2 id="analyticsReturnedItems">0</h2>
+        </div>
+
+    </div>
+
+    <div class="management-info-card">
+        <h3>Activity Summary</h3>
+        <p>
+            These statistics are calculated from the organization's
+            actual item and claim records.
+        </p>
+    </div>
+
+</div>
+
+
+        </section>
+
+    </main>
+</div>
+
+<script src="js/Common.js"></script>
+<script src="js/Admin.js"></script>
+<script>protectPage("ORG_ADMIN");</script>
+
+</body>
+</html>

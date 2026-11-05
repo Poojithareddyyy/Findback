@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Dashboard | FindBack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="UserDashboard.html" class="brand sidebar-brand">
+                <div class="brand-icon">F</div>
+                <span>FindBack</span>
+            </a>
+
+            <p class="sidebar-label">WORKSPACE</p>
+
+            <nav class="sidebar-nav">
+
+                <a href="UserDashboard.html" class="sidebar-link active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="Lost.html" class="sidebar-link">
+                    <span>＋</span> Report Lost
+                </a>
+
+                <a href="Found.html" class="sidebar-link">
+                    <span>＋</span> Report Found
+                </a>
+
+                <a href="SearchItems.html" class="sidebar-link">
+                    <span>⌕</span> Search Items
+                </a>
+
+                <a href="MyActivity.html" class="sidebar-link">
+                    <span>◷</span> My Activity
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#" onclick="logoutUser(); return false;">Logout</a>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-main">
+
+            <!-- TOPBAR -->
+            <header class="dashboard-topbar">
+
+                <div>
+                    <p class="topbar-organization">FINDBACK WORKSPACE</p>
+                    <h3 id="organizationDisplay">My Organization</h3>
+                </div>
+
+                <div class="profile-section">
+                    <div class="profile-avatar">U</div>
+                    <div>
+                        <span id="currentUserName"></span>
+                        <small>Member</small>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <section class="dashboard-content">
+
+                <div class="dashboard-welcome">
+                    <div>
+                        <p class="welcome-date">MEMBER WORKSPACE</p>
+                        <h1>Welcome back, <span id="welcomeName">User</span>!</h1>
+                        <p>Here's an overview of your lost and found activity.</p>
+                    </div>
+
+                    <a href="SearchItems.html" class="dashboard-search-btn">
+                        ⌕ Search Items
+                    </a>
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+                <div class="quick-actions">
+
+                    <a href="Lost.html" class="quick-action-card">
+                        <div class="quick-action-icon lost-icon">＋</div>
+                        <div>
+                            <strong>Report Lost Item</strong>
+                            <small>Report something you've lost</small>
+                        </div>
+                        <span>→</span>
+                    </a>
+
+                    <a href="Found.html" class="quick-action-card">
+                        <div class="quick-action-icon found-icon">✓</div>
+                        <div>
+                            <strong>Report Found Item</strong>
+                            <small>Record an item you've found</small>
+                        </div>
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+                <div class="dashboard-section-heading">
+                    <h2>My Overview</h2>
+                    <span>Your activity summary</span>
+                </div>
+
+                <div class="dashboard-stats">
+
+                    <div class="dashboard-stat-card">
+                        <div class="dashboard-stat-top">
+                            <span>Lost Reports</span>
+                            <div class="dashboard-stat-icon orange">↗</div>
+                        </div>
+                        <h2 id="lostCount">0</h2>
+                        <p>Items reported lost</p>
+                    </div>
+
+                    <div class="dashboard-stat-card">
+                        <div class="dashboard-stat-top">
+                            <span>Found Reports</span>
+                            <div class="dashboard-stat-icon green">✓</div>
+                        </div>
+                        <h2 id="foundCount">0</h2>
+                        <p>Items reported found</p>
+                    </div>
+
+                    <div class="dashboard-stat-card">
+                        <div class="dashboard-stat-top">
+                            <span>Active Claims</span>
+                            <div class="dashboard-stat-icon purple">◷</div>
+                        </div>
+                        <h2 id="claimCount">0</h2>
+                        <p>Claims awaiting completion</p>
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT ACTIVITY -->
+                <div class="dashboard-section-heading recent-heading">
+                    <div>
+                        <h2>Recent Activity</h2>
+                        <span>Recently submitted reports and claims</span>
+                    </div>
+
+                    <a href="MyActivity.html">View All →</a>
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="activity-table-wrapper">
+
+                        <table class="activity-table">
+
+                            <thead>
+                                <tr>
+                                    <th>ITEM</th>
+                                    <th>TYPE</th>
+                                    <th>DATE</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recentActivityBody">
+
+                                <tr>
+                                    <td colspan="4" class="empty-activity">
+                                        No recent activity yet.
+                                        Start by reporting or searching for an item.
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMATION -->
+                <div class="dashboard-information">
+                    <div class="information-icon">i</div>
+                    <div>
+                        <strong>Keep your belongings within reach.</strong>
+                        <p>
+                            Search verified found items in your organization
+                            and submit a claim if you recognize your belonging.
+                            Physical collection is confirmed by your administrator.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/Common.js"></script>
+    <script>protectPage("MEMBER");</script>
+    <script>
+    const storedName = sessionStorage.getItem("findbackName");
+const userName = storedName && storedName !== "undefined"
+    ? storedName : "Member";
+
+    document.getElementById("currentUserName").textContent = userName;
+    document.getElementById("welcomeName").textContent = userName;
+
+    const avatar = document.querySelector(".profile-avatar");
+
+    if (avatar) {
+        avatar.textContent = userName.charAt(0).toUpperCase();
+    }
+</script>
+
+
+
+<script>
+async function loadDashboardStats() {
+    try {
+        const response = await fetch(
+            "http://localhost:8080/FindBack/MyActivityServlet",
+            {
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer " +
+                        sessionStorage.getItem("findbackToken")
+                }
+            }
+        );
+
+        const result = await response.json();
+
+        if (!result.success) {
+            console.error("Unable to load dashboard statistics");
+            return;
+        }
+
+        const items = result.items || [];
+        const claims = result.claims || [];
+
+        
+        const lostCount = items.filter(
+            item => item.itemType === "LOST"
+        ).length;
+
+        const foundCount = items.filter(
+            item => item.itemType === "FOUND"
+        ).length;
+
+        
+        document.getElementById("lostCount").textContent = lostCount;
+        document.getElementById("foundCount").textContent = foundCount;
+        document.getElementById("claimCount").textContent = claims.length;
+
+        
+        const tbody = document.getElementById("recentActivityBody");
+
+        if (!tbody) return;
+
+        tbody.innerHTML = "";
+
+        if (items.length === 0) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" class="empty-activity">
+                        No recent activity yet.
+                    </td>
+                </tr>`;
+            return;
+        }
+
+        
+        const recentItems = [...items]
+            .sort((a, b) =>
+                new Date(b.itemDate) - new Date(a.itemDate)
+            )
+            .slice(0, 5);
+
+        recentItems.forEach(item => {
+            const row = document.createElement("tr");
+
+            [
+                item.itemName,
+                item.itemType,
+                item.itemDate,
+                item.status
+            ].forEach(value => {
+                const cell = document.createElement("td");
+                cell.textContent = value || "-";
+                row.appendChild(cell);
+            });
+
+            tbody.appendChild(row);
+        });
+
+    } catch (error) {
+        console.error("Dashboard loading error:", error);
+    }
+}
+
+
+loadDashboardStats();
+</script>
+
+</body>
+</html>

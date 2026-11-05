@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Items | FindBack</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="UserDashboard.html" class="brand sidebar-brand">
+            <div class="brand-icon">F</div>
+            <span>FindBack</span>
+        </a>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="UserDashboard.html" class="sidebar-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="Lost.html" class="sidebar-link">
+                <span>＋</span> Report Lost
+            </a>
+
+            <a href="Found.html" class="sidebar-link">
+                <span>＋</span> Report Found
+            </a>
+
+            <a href="SearchItems.html" class="sidebar-link active">
+                <span>⌕</span> Search Items
+            </a>
+
+            <a href="MyActivity.html" class="sidebar-link">
+                <span>◷</span> My Activity
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" onclick="logoutUser(); return false;">Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+
+            <div>
+                <p class="topbar-organization">FINDBACK WORKSPACE</p>
+                <h3 id="organizationDisplay">My Organization</h3>
+            </div>
+
+            <div class="profile-section">
+                <div class="profile-avatar">U</div>
+                <div>
+                    <strong id="userNameDisplay">User</strong>
+                    <small>Member</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADING -->
+            <div class="search-page-heading">
+                <div>
+                    <p class="welcome-date">FIND YOUR BELONGINGS</p>
+                    <h1>Search Found Items</h1>
+                    <p>Browse verified items reported within your organization.</p>
+                </div>
+
+                <a href="Lost.html" class="search-report-link">
+                    + Report Lost Item
+                </a>
+            </div>
+
+
+            <!-- SEARCH PANEL -->
+            <div class="item-search-panel">
+
+                <div class="search-panel-heading">
+                    <div>
+                        <h2>Find an Item</h2>
+                        <p>Use the details you remember to narrow your search.</p>
+                    </div>
+                    <span class="search-symbol">⌕</span>
+                </div>
+
+                <form id="searchItemForm" name="searchItemForm">
+
+                    <div class="search-fields">
+
+                        <div class="form-group">
+                            <label for="searchName">Item Name</label>
+                            <input
+                                type="text"
+                                id="searchName"
+                                name="itemName"
+                                placeholder="e.g. Phone, wallet, laptop">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="searchCategory">Category</label>
+                            <select id="searchCategory" name="category">
+                                <option value="">All Categories</option>
+                                <option value="ELECTRONICS">Electronics</option>
+                                <option value="BAGS">Bags & Accessories</option>
+                                <option value="DOCUMENTS">Documents & ID Cards</option>
+                                <option value="CLOTHING">Clothing</option>
+                                <option value="JEWELLERY">Jewellery</option>
+                                <option value="BOOKS">Books & Stationery</option>
+                                <option value="PERSONAL">Personal Belongings</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="searchLocation">Location</label>
+                            <input
+                                type="text"
+                                id="searchLocation"
+                                name="location"
+                                placeholder="Enter location">
+                        </div>
+
+                    </div>
+
+                    <div class="search-actions">
+                        <button type="reset" class="search-clear-btn">
+                            Clear Filters
+                        </button>
+
+                        <button type="submit" class="search-submit-btn">
+                            <span>⌕</span> Search Items
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- RESULTS HEADING -->
+            <div class="results-heading">
+                <div>
+                    <h2>Available Found Items</h2>
+                    <p id="resultCount">Showing demo results</p>
+                </div>
+
+                <span class="verified-label">
+                    ✓ Admin Verified
+                </span>
+            </div>
+
+
+            <!-- RESULTS -->
+            <div class="search-results-grid" id="searchResults">
+
+                
+
+
+                
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+            <div class="no-results" id="noResults">
+                <div>⌕</div>
+                <h3>No matching items found</h3>
+                <p>Try changing your search term or clearing the filters.</p>
+            </div>
+
+
+            <div class="search-information">
+                <span>i</span>
+                <p>
+                    Only items verified by your organization's administrator
+                    are displayed here. If you recognize an item, you can
+                    submit a claim for verification and collection.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ITEM DETAILS MODAL -->
+<div class="item-modal" id="itemModal">
+
+    <div class="item-modal-content">
+
+        <button type="button" class="modal-close" id="closeModal">
+            ×
+        </button>
+
+        <span class="section-tag">ITEM DETAILS</span>
+
+        <h2 id="modalItemName">Item Name</h2>
+
+        <p id="modalItemDescription"></p>
+
+        <label for="claimDetails">
+        Why do you believe this item belongs to you?
+        </label>
+
+        <textarea
+         id="claimDetails"
+        rows="4"
+        placeholder="Describe identifying details only the owner would know..."></textarea>
+
+        <div class="modal-guidance">
+            <strong>Before submitting a claim</strong>
+            <p>
+                You may be asked to provide identifying details to
+                establish ownership. The administrator will verify
+                your claim before approving collection.
+            </p>
+        </div>
+
+        <button type="button" class="registration-submit" id="claimItemBtn">
+            Continue to Claim <span>→</span>
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/Common.js"></script>
+<script src="js/Items.js"></script>
+<script>
+    protectPage("MEMBER");
+</script>
+
+</body>
+</html>

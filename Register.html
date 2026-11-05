@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join Organization | FindBack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="register-page">
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                <div class="brand-icon">F</div>
+                <span>FindBack</span>
+            </a>
+
+            <div class="register-header-right">
+                <span>Already a member?</span>
+                <a href="Login.html">Login</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- MAIN SECTION -->
+    <main class="registration-section">
+
+        <div class="registration-container">
+
+            <!-- LEFT INFORMATION -->
+            <section class="registration-info">
+
+                <span class="section-tag">JOIN YOUR ORGANIZATION</span>
+
+                <h1>
+                    Your belongings
+                    <span>matter to us.</span>
+                </h1>
+
+                <p class="registration-description">
+                    Create your FindBack account and become part of
+                    your organization's digital lost and found
+                    workspace. Search for belongings, report items
+                    and track your claims in one place.
+                </p>
+
+
+                <div class="registration-benefits">
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⌕</div>
+                        <div>
+                            <h3>Search Found Items</h3>
+                            <p>Explore verified found-item records in your organization.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">＋</div>
+                        <div>
+                            <h3>Report Belongings</h3>
+                            <p>Submit lost and found item reports easily.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✓</div>
+                        <div>
+                            <h3>Track Your Claims</h3>
+                            <p>Stay updated on your claim and recovery status.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="registration-note">
+                    <span>i</span>
+                    Make sure you have the organization code
+                    provided by your organization administrator.
+                </div>
+
+            </section>
+
+
+            <!-- REGISTRATION FORM -->
+            <section class="registration-form-card">
+
+                <div class="form-heading">
+                    <h2>Create your account</h2>
+                    <p>Enter your details to join your organization.</p>
+                </div>
+
+
+                <form id="memberForm" name="memberForm">
+
+                    <div class="form-section-heading">
+                        <span class="form-section-number">01</span>
+                        <div>
+                            <h3>Account Details</h3>
+                            <p>Enter your organization and personal details.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="memberOrgCode">
+                            Organization Code <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="memberOrgCode"
+                            name="organizationCode"
+                            placeholder="Enter your organization code"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="memberName">
+                            Full Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="memberName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            maxlength="100"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="memberEmail">
+                            Email Address <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="memberEmail"
+                            name="email"
+                            placeholder="Enter your email address"
+                            maxlength="120"
+                            required>
+                    </div>
+
+
+                    <div class="form-divider"></div>
+
+
+                    <div class="form-section-heading">
+                        <span class="form-section-number">02</span>
+                        <div>
+                            <h3>Set Your Password</h3>
+                            <p>Secure your FindBack account.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="memberPassword">
+                            Password <span>*</span>
+                        </label>
+
+                        <input
+                            type="password"
+                            id="memberPassword"
+                            name="password"
+                            placeholder="Create a password"
+                            minlength="8"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="memberConfirmPassword">
+                            Confirm Password <span>*</span>
+                        </label>
+
+                        <input
+                            type="password"
+                            id="memberConfirmPassword"
+                            name="confirmPassword"
+                            placeholder="Re-enter your password"
+                            minlength="8"
+                            required>
+                    </div>
+
+
+                    <p class="form-error" id="memberError"></p>
+
+
+                    <button type="submit" class="registration-submit">
+                        Create Account <span>→</span>
+                    </button>
+
+                    <p class="form-terms">
+                        By creating an account, you agree to provide
+                        accurate information.
+                    </p>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="registration-footer">
+        <p>© 2026 FindBack. All rights reserved.</p>
+        <a href="index.html">Back to Home</a>
+    </footer>
+
+
+    <script src="js/Auth.js"></script>
+
+</body>
+</html>

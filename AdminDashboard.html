@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | FindBack</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <h2>FindBack</h2>
+            <p>Lost and Found Management System</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="AdminDashboard.html" class="active">Dashboard</a>
+            <a href="AdminManagement.html">Management</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" onclick="logoutUser(); return false;">Logout</a>
+        </div>
+
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+            <div>
+                <h3>Admin Dashboard</h3>
+                <p>Monitor your organization's Lost & Found activities.</p>
+            </div>
+
+            <div class="topbar-profile">
+                <span class="profile-avatar">A</span>
+                <span id="currentUserName"></span>
+            </div>
+        </header>
+
+        <section class="admin-dashboard-content">
+
+            <!-- Welcome -->
+            <div class="admin-welcome">
+                <div>
+                    <h1>Welcome back, <span id="welcomeName">Admin</span>!</h1>
+                    <p>Here's what's happening in your organization today.</p>
+                </div>
+
+                <a href="AdminManagement.html" class="admin-manage-button">
+                    Manage Records
+                </a>
+            </div>
+
+            <!-- Statistics -->
+            <div class="admin-stats-grid">
+
+                <div class="admin-stat-card">
+                    <span>Total Items</span>
+                    <h2 id="totalItemsCount">0</h2>
+                    <p>All reported items</p>
+                </div>
+
+                <div class="admin-stat-card">
+                    <span>Lost Items</span>
+                    <h2 id="lostItemsCount">0</h2>
+                    <p>Currently reported missing</p>
+                </div>
+
+                <div class="admin-stat-card">
+                    <span>Found Items</span>
+                    <h2 id="foundReportedCount">0</h2>
+                    <p>Items reported found</p>
+                </div>
+
+                <div class="admin-stat-card">
+                    <span>Pending Verification</span>
+                    <h2 id="availableItemsCount">0</h2>
+                    <p>Awaiting admin review</p>
+                </div>
+
+                <div class="admin-stat-card">
+                    <span>Pending Claims</span>
+                    <h2 id="pendingClaimsCount">0</h2>
+                    <p>Claims awaiting decision</p>
+                </div>
+
+                <div class="admin-stat-card">
+                    <span>Items Returned</span>
+                    <h2 id="returnedItemsCount">0</h2>
+                    <p>Successfully handed over</p>
+                </div>
+
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="admin-dashboard-grid">
+
+                <!-- Recent Item Reports -->
+                <div class="admin-dashboard-card">
+
+                    <div class="admin-card-heading">
+                        <div>
+                            <h2>Recent Item Reports</h2>
+                            <p>Latest submissions from members.</p>
+                        </div>
+
+                        <a href="AdminManagement.html">View All</a>
+                    </div>
+
+                    <div class="admin-recent-list" id="recentItemsList">
+                            <p>Loading recent reports...</p>
+                    </div>
+
+                </div>
+
+                <!-- Recent Claims -->
+                <div class="admin-dashboard-card">
+
+                    <div class="admin-card-heading">
+                        <div>
+                            <h2>Recent Claim Requests</h2>
+                            <p>Claims requiring attention.</p>
+                        </div>
+
+                        <a href="AdminManagement.html">View All</a>
+                    </div>
+
+                    <div class="admin-recent-list" id="recentClaimsList">
+                        <p>Loading recent claims...</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Admin Reminder -->
+            <div class="admin-reminder">
+                <div>
+                    <h3>Keep your Lost & Found records updated</h3>
+                    <p>
+                        Verify newly reported found items, review pending claims,
+                        and record physical handovers after collection.
+                    </p>
+                </div>
+
+                <a href="AdminManagement.html">Open Management</a>
+            </div>
+
+            <p class="admin-demo-note">
+                Dashboard figures and activities are sample data for frontend demonstration.
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/Common.js"></script>
+<script src="js/Admin.js"></script>
+<script>
+    protectPage("ORG_ADMIN");
+    loadAdminDashboard();
+    loadAdminRecentActivity();
+</script>
+<script>
+    const storedName = sessionStorage.getItem("findbackName");
+const userName = storedName && storedName !== "undefined"
+    ? storedName : "Admin";
+
+    document.getElementById("currentUserName").textContent = userName;
+    document.getElementById("welcomeName").textContent = userName;
+
+    const avatar = document.querySelector(".profile-avatar");
+
+    if (avatar) {
+        avatar.textContent = userName.charAt(0).toUpperCase();
+    }
+</script>
+
+</body>
+</html>

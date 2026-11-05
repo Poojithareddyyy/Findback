@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | FindBack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="login-page">
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-icon">F</div>
+                <span>FindBack</span>
+            </a>
+
+            <div class="register-header-right">
+                <span>New organization?</span>
+                <a href="OrgRegister.html">Register here</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-section">
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                <div class="brand-icon">F</div>
+            </div>
+
+            <div class="login-heading">
+                <h1>Welcome back!</h1>
+                <p>Sign in to access your FindBack workspace.</p>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="organizationCode">Organization Code <span>*</span></label>
+                    <input type="text" id="organizationCode"
+                           name="organizationCode"
+                           placeholder="Enter your organization code"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginEmail">Email Address <span>*</span></label>
+                    <input type="email" id="loginEmail"
+                           name="email"
+                           placeholder="Enter your email address"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password <span>*</span></label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPassword"
+                               name="password"
+                               placeholder="Enter your password"
+                               required>
+                        <button type="button" class="toggle-password"
+                                id="toggleLoginPassword">Show</button>
+                    </div>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-option">
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+                </div>
+
+                <p class="form-error" id="loginError"></p>
+
+                <button type="submit" class="registration-submit">
+                    Login to FindBack <span>→</span>
+                </button>
+
+            </form>
+
+            <div class="login-divider">
+                <span>NEW TO FINDBACK?</span>
+            </div>
+
+            <p class="login-register">
+                Want to join an existing organization?
+                <a href="Register.html">Create a member account</a>
+            </p>
+
+            <p class="login-register">
+                Want to register a new organization?
+                <a href="OrgRegister.html">Register organization</a>
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer class="registration-footer">
+        <p>© 2026 FindBack. All rights reserved.</p>
+        <a href="index.html">Back to Home</a>
+    </footer>
+
+    <script src="js/Auth.js"></script>
+
+</body>
+</html>

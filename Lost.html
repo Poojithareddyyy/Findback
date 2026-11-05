@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Lost Item | FindBack</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="UserDashboard.html" class="brand sidebar-brand">
+            <div class="brand-icon">F</div>
+            <span>FindBack</span>
+        </a>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="UserDashboard.html" class="sidebar-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="Lost.html" class="sidebar-link active">
+                <span>＋</span> Report Lost
+            </a>
+
+            <a href="Found.html" class="sidebar-link">
+                <span>＋</span> Report Found
+            </a>
+
+            <a href="SearchItems.html" class="sidebar-link">
+                <span>⌕</span> Search Items
+            </a>
+
+            <a href="MyActivity.html" class="sidebar-link">
+                <span>◷</span> My Activity
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" onclick="logoutUser(); return false;">Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+
+            <div>
+                <p class="topbar-organization">FINDBACK WORKSPACE</p>
+                <h3 id="organizationDisplay">My Organization</h3>
+            </div>
+
+            <div class="profile-section">
+                <div class="profile-avatar">U</div>
+                <div>
+                    <strong id="userNameDisplay">User</strong>
+                    <small>Member</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADING -->
+            <div class="report-page-heading">
+
+                <div>
+                    <p class="welcome-date">ITEM REPORTING</p>
+                    <h1>Report a Lost Item</h1>
+                    <p>Provide the details below to help your organization identify your missing belonging.</p>
+                </div>
+
+                <a href="UserDashboard.html" class="report-back-link">
+                    ← Back to Dashboard
+                </a>
+
+            </div>
+
+
+            <!-- REPORT FORM -->
+            <div class="report-form-card">
+
+                <div class="report-form-heading">
+                    <div class="report-form-icon">⌕</div>
+                    <div>
+                        <h2>Lost Item Details</h2>
+                        <p>Fields marked with <span>*</span> are required.</p>
+                    </div>
+                </div>
+
+
+                <form id="lostItemForm" name="lostItemForm">
+
+                    <div class="report-form-grid">
+
+                        <div class="form-group">
+                            <label for="itemName">
+                                Item Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="itemName"
+                                name="itemName"
+                                placeholder="e.g. Black laptop, Blue backpack"
+                                maxlength="120"
+                                required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="itemCategory">
+                                Category <span>*</span>
+                            </label>
+
+                            <select id="itemCategory"
+                                    name="category"
+                                    required>
+
+                                <option value="">Select category</option>
+                                <option value="ELECTRONICS">Electronics</option>
+                                <option value="BAGS">Bags & Accessories</option>
+                                <option value="DOCUMENTS">Documents & ID Cards</option>
+                                <option value="CLOTHING">Clothing</option>
+                                <option value="JEWELLERY">Jewellery</option>
+                                <option value="BOOKS">Books & Stationery</option>
+                                <option value="PERSONAL">Personal Belongings</option>
+                                <option value="OTHER">Other</option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="form-group full-width">
+                            <label for="itemDescription">
+                                Item Description <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="itemDescription"
+                                name="description"
+                                rows="4"
+                                maxlength="1000"
+                                placeholder="Describe the item's colour, brand, appearance or any identifying details..."
+                                required></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="lastSeenLocation">
+                                Last Seen Location <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastSeenLocation"
+                                name="location"
+                                placeholder="e.g. Library, Block A, Cafeteria"
+                                maxlength="150"
+                                required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="dateLost">
+                                Date Lost <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dateLost"
+                                name="itemDate"
+                                required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-guidance">
+                        <span>i</span>
+                        <p>
+                            Please provide accurate details. Your report
+                            will be recorded for your organization's
+                            lost and found management process.
+                        </p>
+                    </div>
+
+                    <div id="lostError">
+                    <p class="form-error" id="lostFormError"></p>
+                        </div>
+
+                    <div class="report-form-actions">
+
+                        <a href="UserDashboard.html" class="report-cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button type="submit" class="registration-submit">
+                            Submit Lost Report <span>→</span>
+                        </button>
+
+                    </div>
+
+                </form>
+                <div id="matchingResults" class="matching-results" style="display:none; margin-top:25px;">
+
+    <h2>Potential Matching Items</h2>
+
+    <p>We found these possible matches for your lost item.</p>
+
+    <div id="matchingItemsList"></div>
+
+</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/Items.js"></script>
+<script src="js/Common.js"></script>
+
+<script>
+    protectPage("MEMBER");
+</script>
+
+</body>
+</html>
+

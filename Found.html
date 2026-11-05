@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Found Item | FindBack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="UserDashboard.html" class="brand sidebar-brand">
+            <div class="brand-icon">F</div>
+            <span>FindBack</span>
+        </a>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="UserDashboard.html" class="sidebar-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="Lost.html" class="sidebar-link">
+                <span>＋</span> Report Lost
+            </a>
+
+            <a href="Found.html" class="sidebar-link active">
+                <span>＋</span> Report Found
+            </a>
+
+            <a href="SearchItems.html" class="sidebar-link">
+                <span>⌕</span> Search Items
+            </a>
+
+            <a href="MyActivity.html" class="sidebar-link">
+                <span>◷</span> My Activity
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            
+            <a href="#" onclick="logoutUser(); return false;">Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+
+            <div>
+                <p class="topbar-organization">FINDBACK WORKSPACE</p>
+                <h3 id="organizationDisplay">My Organization</h3>
+            </div>
+
+            <div class="profile-section">
+                <div class="profile-avatar">U</div>
+                <div>
+                    <strong id="userNameDisplay">User</strong>
+                    <small>Member</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADING -->
+            <div class="report-page-heading">
+
+                <div>
+                    <p class="welcome-date">ITEM REPORTING</p>
+                    <h1>Report a Found Item</h1>
+                    <p>Help someone recover their belongings by reporting an item you've found.</p>
+                </div>
+
+                <a href="UserDashboard.html" class="report-back-link">
+                    ← Back to Dashboard
+                </a>
+
+            </div>
+
+
+            <!-- REPORT FORM -->
+            <div class="report-form-card">
+
+                <div class="report-form-heading">
+                    <div class="report-form-icon found-icon">✓</div>
+                    <div>
+                        <h2>Found Item Details</h2>
+                        <p>Fields marked with <span>*</span> are required.</p>
+                    </div>
+                </div>
+
+
+                <form id="foundItemForm" name="foundItemForm">
+
+                    <div class="report-form-grid">
+
+                        <div class="form-group">
+                            <label for="foundItemName">
+                                Item Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="foundItemName"
+                                name="itemName"
+                                placeholder="e.g. Black laptop, Blue backpack"
+                                maxlength="120"
+                                required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="foundCategory">
+                                Category <span>*</span>
+                            </label>
+
+                            <select
+                                id="foundCategory"
+                                name="category"
+                                required>
+
+                                <option value="">Select category</option>
+                                <option value="ELECTRONICS">Electronics</option>
+                                <option value="BAGS">Bags & Accessories</option>
+                                <option value="DOCUMENTS">Documents & ID Cards</option>
+                                <option value="CLOTHING">Clothing</option>
+                                <option value="JEWELLERY">Jewellery</option>
+                                <option value="BOOKS">Books & Stationery</option>
+                                <option value="PERSONAL">Personal Belongings</option>
+                                <option value="OTHER">Other</option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="form-group full-width">
+                            <label for="foundDescription">
+                                Item Description <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="foundDescription"
+                                name="description"
+                                rows="4"
+                                maxlength="1000"
+                                placeholder="Describe the item's colour, brand, appearance or other identifying details..."
+                                required></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="foundLocation">
+                                Found Location <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="foundLocation"
+                                name="location"
+                                placeholder="e.g. Library, Block A, Cafeteria"
+                                maxlength="150"
+                                required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="dateFound">
+                                Date Found <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dateFound"
+                                name="itemDate"
+                                required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMPORTANT INFORMATION -->
+                    <div class="report-guidance">
+                        <span>i</span>
+                        <p>
+                            Please hand over the found item to your
+                            organization's lost and found desk or
+                            authorized staff. The administrator must
+                            verify the item before it becomes available
+                            for claims on FindBack.
+                        </p>
+                    </div>
+
+                    <div id="foundError">
+                    <p class="form-error" id="foundFormError"></p>
+                        </div>
+
+                    <div class="report-form-actions">
+
+                        <a href="UserDashboard.html" class="report-cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button type="submit" class="registration-submit">
+                            Submit Found Report <span>→</span>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/Items.js"></script>
+<script src="js/Common.js"></script>
+
+<script>
+    protectPage("MEMBER");
+</script>
+
+</body>
+</html>

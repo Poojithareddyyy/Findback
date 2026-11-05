@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Organization | FindBack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="register-page">
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                <div class="brand-icon">F</div>
+                <span>FindBack</span>
+            </a>
+
+            <div class="register-header-right">
+                <span>Already registered?</span>
+                <a href="Login.html">Login</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- REGISTRATION SECTION -->
+    <main class="registration-section">
+
+        <div class="registration-container">
+
+            <!-- LEFT INFORMATION PANEL -->
+            <section class="registration-info">
+
+                <span class="section-tag">JOIN FINDBACK</span>
+
+                <h1>
+                    Bring your organization
+                    <span>closer to recovery.</span>
+                </h1>
+
+                <p class="registration-description">
+                    Create your organization's workspace on FindBack
+                    and manage lost and found belongings through
+                    one organized digital platform.
+                </p>
+
+                <div class="registration-benefits">
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✓</div>
+                        <div>
+                            <h3>Dedicated Workspace</h3>
+                            <p>Your organization gets its own separate workspace.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⌕</div>
+                        <div>
+                            <h3>Organized Management</h3>
+                            <p>Manage reports, searches, claims and returns.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">◎</div>
+                        <div>
+                            <h3>Simple Member Access</h3>
+                            <p>Allow members to join using your organization code.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="registration-note">
+                    <span>i</span>
+                    Your organization's information is managed
+                    within its own FindBack workspace.
+                </div>
+
+            </section>
+
+
+            <!-- REGISTRATION FORM -->
+            <section class="registration-form-card">
+
+                <div class="form-heading">
+                    <h2>Register your organization</h2>
+                    <p>Fill in the details below to create your workspace.</p>
+                </div>
+
+
+                <form id="organizationForm" name="organizationForm">
+
+                    <!-- ORGANIZATION DETAILS -->
+                    <div class="form-section-heading">
+                        <span class="form-section-number">01</span>
+                        <div>
+                            <h3>Organization Details</h3>
+                            <p>Tell us about your organization.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organizationName">
+                            Organization Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="organizationName"
+                            name="organizationName"
+                            placeholder="Enter organization name"
+                            maxlength="150"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="organizationType">
+                            Organization Type <span>*</span>
+                        </label>
+
+                        <select id="organizationType"
+                                name="organizationType"
+                                required>
+
+                            <option value="">Select organization type</option>
+                            <option value="UNIVERSITY">University / College</option>
+                            <option value="COMPANY">Corporate / Company</option>
+                            <option value="HOSPITAL">Hospital</option>
+                            <option value="MALL">Mall / Shopping Centre</option>
+                            <option value="HOTEL">Hotel</option>
+                            <option value="AIRPORT">Airport / Transit</option>
+                            <option value="OTHER">Other</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="organizationEmail">
+                                Official Email <span>*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="organizationEmail"
+                                name="organizationEmail"
+                                placeholder="organization@email.com"
+                                maxlength="120"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organizationPhone">
+                                Contact Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="organizationPhone"
+                                name="organizationPhone"
+                                placeholder="Enter phone number"
+                                maxlength="15">
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-divider"></div>
+
+
+                    <!-- ADMIN DETAILS -->
+                    <div class="form-section-heading">
+                        <span class="form-section-number">02</span>
+                        <div>
+                            <h3>Administrator Details</h3>
+                            <p>Create your administrator account.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="adminName">
+                            Administrator Full Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminName"
+                            name="adminName"
+                            placeholder="Enter your full name"
+                            maxlength="100"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="adminEmail">
+                            Administrator Email <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="adminEmail"
+                            name="adminEmail"
+                            placeholder="Enter administrator email"
+                            maxlength="120"
+                            required>
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="adminPassword">
+                                Password <span>*</span>
+                            </label>
+
+                            <input
+                                type="password"
+                                id="adminPassword"
+                                name="adminPassword"
+                                placeholder="Create password"
+                                minlength="8"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                Confirm Password <span>*</span>
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm password"
+                                minlength="8"
+                                required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-error" id="formError"></div>
+
+
+                    <button type="submit" class="registration-submit">
+                        Create Organization <span>→</span>
+                    </button>
+
+                    <p class="form-terms">
+                        By registering, you agree to use FindBack
+                        responsibly and provide accurate information.
+                    </p>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="registration-footer">
+        <p>© 2026 FindBack. All rights reserved.</p>
+        <a href="index.html">Back to Home</a>
+    </footer>
+
+
+    <script src="js/Auth.js"></script>
+
+</body>
+</html>

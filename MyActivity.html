@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Activity | FindBack</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>FindBack</h2>
+            <p>Lost and Found Management System</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="UserDashboard.html">Dashboard</a>
+            <a href="Lost.html">Report Lost Item</a>
+            <a href="Found.html">Report Found Item</a>
+            <a href="SearchItems.html">Search Items</a>
+            <a href="MyActivity.html" class="active">My Activity</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" onclick="logoutUser(); return false;">Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+            <div>
+                <h3>My Activity</h3>
+                <p>Track your reports and claims in one place.</p>
+            </div>
+            <div class="topbar-profile">
+                <span class="profile-avatar">M</span>
+                <span>Member</span>
+            </div>
+        </header>
+
+        <section class="activity-content">
+
+            <div class="activity-heading">
+                <h1>Your Activity Overview</h1>
+                <p>Stay updated on everything you have reported or claimed.</p>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="activity-stats">
+
+                <div class="activity-stat-card">
+                    <span>Total Reports</span>
+                    <h2 id="totalReports">3</h2>
+                    <p>All your submitted reports</p>
+                </div>
+
+                <div class="activity-stat-card">
+                    <span>Lost Reports</span>
+                    <h2 id="lostReports">2</h2>
+                    <p>Items you reported missing</p>
+                </div>
+
+                <div class="activity-stat-card">
+                    <span>Found Reports</span>
+                    <h2 id="foundReports">1</h2>
+                    <p>Items you reported finding</p>
+                </div>
+
+                <div class="activity-stat-card">
+                    <span>Active Claims</span>
+                    <h2 id="activeClaims">1</h2>
+                    <p>Claims awaiting completion</p>
+                </div>
+
+            </div>
+
+            <!-- Activity Section -->
+            <div class="activity-list-card">
+
+                <div class="activity-list-heading">
+                    <div>
+                        <h2>Activity History</h2>
+                        <p>View the latest updates on your submissions.</p>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="activity-filters">
+                    <button class="activity-filter active" data-filter="all">
+                        All Activity
+                    </button>
+
+                    <button class="activity-filter" data-filter="lost">
+                        Lost Reports
+                    </button>
+
+                    <button class="activity-filter" data-filter="found">
+                        Found Reports
+                    </button>
+
+                    <button class="activity-filter" data-filter="claim">
+                        Claims
+                    </button>
+                </div>
+
+                <!-- Activity Table -->
+                <div class="activity-table-wrapper">
+                    <table class="activity-table">
+                        <thead>
+                            <tr>
+                                <th>Item / Claim</th>
+                                <th>Activity Type</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="activityTableBody">
+                        <tr>
+                        <td colspan="4" class="activity-empty">Loading your activity...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="activityEmptyMessage" class="activity-empty" style="display:none;">
+                    No activities found in this category.
+                </p>
+
+                <p class="activity-demo-note">
+                    Note: The records shown are sample data. Your actual activity
+                    will appear here after backend integration.
+                </p>
+
+            </div>
+
+        </section>
+    </main>
+
+</div>
+
+<script src="js/Common.js"></script>
+<script src="js/Items.js"></script>
+<script>protectPage("MEMBER");</script>
+
+</body>
+</html>
