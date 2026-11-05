@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>FindBack</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>OrganizationRegisterServlet</servlet-name>
+  	<servlet-class>Controller.OrganizationRegisterServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+ 	 <servlet-name>OrganizationRegisterServlet</servlet-name>
+  	<url-pattern>/OrganizationRegisterServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>MemberRegisterServlet</servlet-name>
+    <servlet-class>Controller.MemberRegisterServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>MemberRegisterServlet</servlet-name>
+    	<url-pattern>/MemberRegisterServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>Controller.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>LoginServlet</servlet-name>
+    	<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>Controller.SessionServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>SessionServlet</servlet-name>
+    	<url-pattern>/SessionServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>Controller.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>LogoutServlet</servlet-name>
+    	<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>ItemServlet</servlet-name>
+    <servlet-class>Controller.ItemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>ItemServlet</servlet-name>
+    	<url-pattern>/ItemServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>AdminItemsServlet</servlet-name>
+    <servlet-class>Controller.AdminItemsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    <servlet-name>AdminItemsServlet</servlet-name>
+    <url-pattern>/AdminItemsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+    <servlet-name>VerifyItemServlet</servlet-name>
+    <servlet-class>Controller.VerifyItemServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    <servlet-name>VerifyItemServlet</servlet-name>
+    <url-pattern>/VerifyItemServlet</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+    <filter-name>CORSFilter</filter-name>
+    <filter-class>Controller.CORSFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>CORSFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<servlet>
+    <servlet-name>SearchItemsServlet</servlet-name>
+    <servlet-class>Controller.SearchItemsServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>SearchItemsServlet</servlet-name>
+    <url-pattern>/SearchItemsServlet</url-pattern>
+</servlet-mapping>
+
+	<servlet>
+    <servlet-name>ClaimServlet</servlet-name>
+    <servlet-class>Controller.ClaimServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ClaimServlet</servlet-name>
+    <url-pattern>/ClaimServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>AdminClaimsServlet</servlet-name>
+    <servlet-class>Controller.AdminClaimsServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AdminClaimsServlet</servlet-name>
+    <url-pattern>/AdminClaimsServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdateClaimServlet</servlet-name>
+    <servlet-class>Controller.UpdateClaimServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>UpdateClaimServlet</servlet-name>
+    <url-pattern>/UpdateClaimServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>HandoverServlet</servlet-name>
+    <servlet-class>Controller.HandoverServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>HandoverServlet</servlet-name>
+    <url-pattern>/HandoverServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>AdminReturnsServlet</servlet-name>
+    <servlet-class>Controller.AdminReturnsServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AdminReturnsServlet</servlet-name>
+    <url-pattern>/AdminReturnsServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>MyActivityServlet</servlet-name>
+    <servlet-class>Controller.MyActivityServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>MyActivityServlet</servlet-name>
+    <url-pattern>/MyActivityServlet</url-pattern>
+</servlet-mapping>
+
+
+
+</web-app>
